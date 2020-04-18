@@ -75,7 +75,9 @@ export class ClrPopoverContent implements AfterContentChecked, OnDestroy {
         this.shouldRealign = true;
         // Avoid flickering on initialization, caused by the asynchronous nature of the
         // check-collector pattern.
-        this.renderer.setStyle(this.view.rootNodes[0], 'opacity', '0');
+        if (this.view) {
+          this.renderer.setStyle(this.view.rootNodes[0], 'opacity', '0');
+        }
       }),
       // Here we collect subsequent synchronously received content-check events and only take action
       // at the end of the cycle. See below for details on the check-collector pattern.

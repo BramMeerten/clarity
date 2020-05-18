@@ -55,11 +55,7 @@ export class Inventory {
         const lowerCase = filters[key].map(value => value.toLowerCase());
         this._currentQuery = this._currentQuery.filter(user => {
           for (const value of lowerCase) {
-            if (
-              getFilterProperty(user)
-                .toLowerCase()
-                .indexOf(value) >= 0
-            ) {
+            if (getFilterProperty(user).toLowerCase().indexOf(value) >= 0) {
               return true;
             }
           }
@@ -96,7 +92,7 @@ export class Inventory {
     return this;
   }
 
-  fetch(skip: number = 0, limit: number = this._currentQuery.length): Promise<FetchResult> {
+  fetch(skip = 0, limit: number = this._currentQuery.length): Promise<FetchResult> {
     const result: FetchResult = {
       users: this._currentQuery.slice(skip, skip + limit),
       length: this._currentQuery.length,
@@ -106,7 +102,7 @@ export class Inventory {
   }
 
   private _fakeHttp<T>(result: T): Promise<T> {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       setTimeout(() => resolve(result), this.latency);
     });
   }

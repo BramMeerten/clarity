@@ -1,0 +1,73 @@
+// Copyright (c) 2016-2020 VMware, Inc. All Rights Reserved.
+// This software is released under MIT license.
+// The full license information can be found in LICENSE in the root directory of this project.
+
+@import './../styles/tokens/generated/index';
+@import './../styles/mixins/mixins';
+
+:host {
+  --font-weight: #{$cds-token-typography-font-weight-semibold};
+  --font-family: #{$cds-token-typography-font-family};
+  --text-transform: uppercase;
+  --letter-spacing: 0.12em;
+}
+
+.private-host {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
+  text-transform: var(--text-transform);
+
+  & > span > span.button-content {
+    @include line-height-eraser(0em);
+  }
+
+  .button-icon + .button-content {
+    margin-left: #{$cds-token-space-size-3};
+  }
+
+  .button-content + .button-badge {
+    margin-left: #{$cds-token-space-size-4};
+  }
+
+  .button-icon,
+  .button-badge {
+    margin-top: calc(-1 * #{$cds-token-space-size-1});
+  }
+}
+
+:host([size='sm']) .private-host {
+  --letter-spacing: 0.073em;
+}
+
+:host([action='flat']) ::slotted(cds-badge),
+:host([action='outline']) ::slotted(cds-badge) {
+  --border-color: #{$cds-token-color-action-600};
+  --background: #{$cds-token-color-action-600};
+  --color: #{$cds-token-color-neutral-0};
+}
+
+:host([action='outline'][status='success']) ::slotted(cds-badge) {
+  --border-color: #{$cds-token-color-success-700};
+  --background: #{$cds-token-color-success-700};
+  --color: #{$cds-token-color-neutral-0};
+}
+
+:host([action='outline'][status='danger']) ::slotted(cds-badge) {
+  --border-color: #{$cds-token-color-danger-700};
+  --background: #{$cds-token-color-danger-700};
+  --color: #{$cds-token-color-neutral-0};
+}
+
+:host(:not([action='outline']):not([action='flat'])) ::slotted(cds-badge) {
+  --background: transparent;
+  --border-color: #{$cds-token-color-neutral-0};
+  --color: #{$cds-token-color-neutral-0};
+}
+
+:host([status='inverse']) ::slotted(cds-badge) {
+  --border-color: #{$cds-token-color-neutral-0} !important;
+  --background: #{$cds-token-color-neutral-0} !important;
+  --color: #{$cds-token-color-neutral-900} !important;
+  --font-weight: #{$cds-token-typography-font-weight-semibold} !important;
+}

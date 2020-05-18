@@ -2,7 +2,8 @@
 
 # core related files
 *.element.css.ts
-src/clr-core/styles/tokens/generated
+packages/core/src/styles/tokens/generated
+packages/core/dist
 
 # compiled output
 /dist
@@ -11,7 +12,6 @@ src/clr-core/styles/tokens/generated
 /.ng_build
 src/clr-angular/.ng_build
 src/clr-angular/.ng_pkg_build
-/tests/tslint/dist
 
 /reports
 

@@ -11,7 +11,7 @@ const path = require('path');
 
 const ignoreList = ['src/schematics'];
 
-const findPackagesSync = function(dir, list = []) {
+const findPackagesSync = function (dir, list = []) {
   if (dir.indexOf('src/schematics') > -1) {
     return list;
   }
@@ -29,17 +29,3 @@ const findPackagesSync = function(dir, list = []) {
 };
 
 module.exports = findPackagesSync(path.join(process.cwd(), 'src'));
-
-// module.exports = [
-//   './src/clr-angular/package.json',
-//   './src/clr-ui/package.json',
-//   './src/clr-icons/package.json',
-//   './src/clr-core/package.json',
-//   './src/clr-core/badge/package.json',
-//   './src/clr-core/button/package.json',
-//   './src/clr-core/common/package.json',
-//   './src/clr-core/icon-shapes/package.json',
-//   './src/clr-core/icon/package.json',
-//   './src/clr-core/tag/package.json',
-//   './src/clr-core/test-dropdown/package.json',
-// ];

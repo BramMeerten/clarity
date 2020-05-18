@@ -5,12 +5,15 @@
     "baseUrl": "./",
     "resolveJsonModule": true,
     "target": "es2015",
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "noImplicitReturns": false,
     "paths": {
       "@clr/angular": ["../clr-angular"],
-      "@clr/icons": ["../clr-icons"],
-      "@clr/icons/shapes/*": ["../clr-icons/shapes", "../clr-icons/shapes/*"],
-      "@clr/core": ["../clr-core"],
-      "@clr/core/*": ["../clr-core/*"]
+      "@clr/icons": ["../../packages/icons/src"],
+      "@clr/icons/shapes/*": ["../../packages/icons/src/shapes", "../../packages/icons/src/shapes/*"],
+      "@clr/core": ["../core"],
+      "@clr/core/*": ["../core/*"]
     }
   },
   "files": ["src/main.ts", "src/polyfills.ts", "typings.d.ts"]

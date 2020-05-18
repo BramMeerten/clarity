@@ -1,13 +1,13 @@
 /*
- * Copyright (c) 2016-2018 VMware, Inc. All Rights Reserved.
+ * Copyright (c) 2016-2020 VMware, Inc. All Rights Reserved.
  * This software is released under MIT license.
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
 export class StackViewNgDemo {
   /*
-     * Modal edit demo
-     */
+   * Modal edit demo
+   */
   blocks: any[] = [
     { title: 'Label 1', content: 'Content 1' },
     {
@@ -22,11 +22,11 @@ export class StackViewNgDemo {
     { title: 'Label 3', content: 'Content 3' },
   ];
 
-  editModal: boolean = false;
+  editModal = false;
 
   /*
-     * Lazy loading demo
-     */
+   * Lazy loading demo
+   */
   children: any[] = [];
 
   fetchChildren(): void {

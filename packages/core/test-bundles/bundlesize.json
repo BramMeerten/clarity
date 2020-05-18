@@ -1,0 +1,32 @@
+{
+  "files": [
+    {
+      "path": "./dist/core/global.min.css",
+      "maxSize": "2 kB"
+    },
+    {
+      "path": "./dist/core/styles/module.layout.min.css",
+      "maxSize": "9 kB"
+    },
+    {
+      "path": "./dist/core/styles/module.reset.min.css",
+      "maxSize": "2 kB"
+    },
+    {
+      "path": "./dist/core/styles/module.tokens.min.css",
+      "maxSize": "2 kB"
+    },
+    {
+      "path": "./dist/core/styles/module.typography.min.css",
+      "maxSize": "3 kB"
+    },
+    {
+      "path": "./dist/core/list/list.min.css",
+      "maxSize": "1 kB"
+    },
+    {
+      "path": "./dist/test-bundles/webpack.bundle.js",
+      "maxSize": "19 kB"
+    }
+  ]
+}
